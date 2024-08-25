@@ -5,6 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def resume():
+    """
+    Route handler for the home page.
+
+    This function retrieves resume data and renders the 'resume.html' template
+    with the resume data.
+
+    Returns:
+        A rendered template with the resume data.
+    """
     resume_data = {
         'name': 'Dhiman Ghosh',
         'title': 'Senior Software Developer',
@@ -69,8 +78,31 @@ def resume():
 
 @app.route('/download_resume')
 def download_resume():
+    """
+    Route handler for downloading the resume.
+
+    Returns:
+        A file to be downloaded by the user.
+    """
     return send_file('static/Dhiman_Resume.pdf', as_attachment=True)
 
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    Handles HTTP 404 errors by rendering the '404.html' template and returning a 404 status code.
+
+    Parameters:
+        e (Exception): The exception that triggered the error handler.
+
+    Returns:
+        tuple: A tuple containing the rendered template and the HTTP status code.
+    """
+    return render_template('404.html', error=str(e)), 404
+
+
+if __name__ == '__main__':  # Check if this script is being run directly (not imported)
+    app.run(
+        debug=True,  # Enable debug mode for the application
+        host='0.0.0.0'  # Allow the application to be accessed from any network
+    )
