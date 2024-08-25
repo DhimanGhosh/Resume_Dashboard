@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="static/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
@@ -14,13 +14,13 @@
     <div class="container">
         <header>
             <div class="profile-section">
-                <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile Photo" class="profile-photo">
+                <img src="static/profile.png" alt="Profile Photo" class="profile-photo">
                 <div class="details">
                     <h1>{{ name }}</h1>
                     <h3>{{ title }}</h3>
                     <h5>{{ sub_title }}</h5>
-                    <a href="{{ url_for('download_resume') }}" class="download-btn">
-                        <img src="{{ url_for('static', filename='download_icon.png') }}" alt="Download Icon" class="download-icon">
+                    <a href="static/Dhiman_Resume.pdf" class="download-btn">
+                        <img src="static/download_icon.png" alt="Download Icon" class="download-icon">
                         Download Resume
                     </a>
                 </div>

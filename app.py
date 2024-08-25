@@ -72,10 +72,10 @@ def resume():
     return render_template('resume.html', **resume_data)
 
 
-@app.route('/download_resume')
-def download_resume():
-    """Serve the resume file for download."""
-    return send_file('static/Dhiman_Resume.pdf', as_attachment=True)
+# @app.route('/download_resume')
+# def download_resume():
+#     """Serve the resume file for download."""
+#     return send_file('static/Dhiman_Resume.pdf', as_attachment=True)
 
 
 # if __name__ == '__main__':
