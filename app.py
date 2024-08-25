@@ -87,20 +87,6 @@ def download_resume():
     return send_file('static/Dhiman_Resume.pdf', as_attachment=True)
 
 
-@app.errorhandler(404)
-def page_not_found(e):
-    """
-    Handles HTTP 404 errors by rendering the '404.html' template and returning a 404 status code.
-
-    Parameters:
-        e (Exception): The exception that triggered the error handler.
-
-    Returns:
-        tuple: A tuple containing the rendered template and the HTTP status code.
-    """
-    return render_template('404.html', error=str(e)), 404
-
-
 if __name__ == '__main__':  # Check if this script is being run directly (not imported)
     app.run(
         debug=True,  # Enable debug mode for the application
