@@ -1,5 +1,5 @@
 from flask import Flask, render_template, send_file
-from waitress import serve
+# from waitress import serve
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -8,6 +8,8 @@ app = Flask(__name__)
 @app.route('/')
 def resume():
     """Render the resume page."""
+    # TODO: create a db to store all my data; and fetch from it
+    # TODO: use werkzeug for middleware, security
     resume_data = {
         'name': 'Dhiman Ghosh',
         'title': 'Senior Software Developer',
@@ -76,5 +78,5 @@ def download_resume():
     return send_file('static/Dhiman_Resume.pdf', as_attachment=True)
 
 
-if __name__ == '__main__':
-    serve(app, host="0.0.0.0", port=5000)
+# if __name__ == '__main__':
+#     serve(app, host="0.0.0.0", port=5000)
