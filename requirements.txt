@@ -1,11 +1,1 @@
 Flask==2.3.2
-Flask-WTF==1.0.1
-Flask-SQLAlchemy==3.0.1
-Flask-Migrate==5.0.1
-Flask-Login==0.6.3
-Flask-Mail==0.9.1
-gunicorn==21.1.0  # If you are using Gunicorn for deployment
-Jinja2==3.1.2  # Required for templating
-Werkzeug==2.3.2  # Flask's dependency for WSGI utilities
-itsdangerous==2.1.2  # Flask's dependency for security
-click==8.1.3  # Flask's dependency for command-line utilities
