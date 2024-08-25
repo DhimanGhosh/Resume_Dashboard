@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile Photo" class="profile-photo">
+                <div class="details">
+                    <h1>{{ name }}</h1>
+                    <h3>{{ title }}</h3>
+                    <h5>{{ sub_title }}</h5>
+                    <a href="{{ url_for('download_resume') }}" class="download-btn">
+                        <img src="{{ url_for('static', filename='download_icon.png') }}" alt="Download Icon" class="download-icon">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="mailto:{{ email }}" class="email">
+                    <i class="fas fa-envelope"></i> Gmail
+                </a>
+                <a href="{{ linkedin }}" class="linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="{{ github }}" class="github">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </header>
+
+        <section class="experience-qualifications">
+            <h3>Experience</h3>
+            <ul>
+                {% for item in experience %}
+                <li>
+                    <span class="experience-position"> {{ item[0] }} </span>
+                    <span class="experience-at">@</span>
+                    <span class="experience-company"> {{ item[1] }} </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="experience-qualifications">
+            <h3>Qualifications</h3>
+            <ul>
+                {% for item in qualifications %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="work-history">
+            <h3>Work History</h3>
+            <ul>
+                {% for job in work_history %}
+                <li>
+                    <strong>{{ job.position }}</strong> at <em>{{ job.company }}</em><br>
+                    <small>{{ job.duration }}</small><br>
+                    <p>{{ job.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h3>Projects</h3>
+            <ul>
+                {% for project in projects %}
+                <li>
+                    <strong>{{ project.name }}</strong><br>
+                    <p>{{ project.description }}</p>
+                    <small><em>Technologies: {{ project.technologies }}</em></small>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h3>Skills</h3>
+            <ul class="skills">
+                {% for skill, rating in skills.items() %}
+                <li>
+                    <span>{{ skill }}</span>
+                    <div class="rating">
+                        <div class="rating-bar" style="width: {{ rating * 20 }}%;"></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

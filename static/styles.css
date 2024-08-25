@@ -1,0 +1,131 @@
+body {
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #012A38;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #012A38;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.details {
+    text-align: left;
+    flex-grow: 1; /* Allows the details section to grow as needed */
+}
+
+.download-btn {
+    display: inline-flex; /* Change to inline-flex for automatic width */
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #31643F;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    width: auto; /* Ensure the width is only as wide as the content */
+}
+
+.download-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    font-weight: bold;
+    margin-right: 15%;
+    text-decoration: none;
+    color: #319D5A;
+    display: flex;
+    align-items: center;
+}
+
+.social-links i {
+    margin-right: 8px; /* Add space between icon and text */
+}
+
+.experience-qualifications, #work-history, #projects, #skills {
+    margin-top: 20px;
+}
+
+.experience-qualifications ul, #work-history ul, #projects ul, #skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-qualifications li, #work-history li, #projects li, #skills li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.experience-qualifications li::before, #work-history li::before, #projects li::before {
+    content: "\2713"; /* Unicode character for check mark */
+    color: green; /* Color for ticks */
+    margin-right: 10px;
+}
+
+.experience-position {
+    font-weight: bold;
+    color: white;
+}
+
+.experience-at {
+    font-weight: bold;
+    color: orange;
+}
+
+.experience-company {
+    font-weight: bolder;
+    color: green;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating {
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.rating-bar {
+    background-color: #007bff;
+    height: 100%;
+}
