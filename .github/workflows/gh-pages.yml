@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x  # Use the required Python version
+        python-version: 3.11  # Use the required Python version
 
     - name: Install dependencies
       run: |
@@ -25,7 +25,7 @@ jobs:
 
     - name: Build Flask app
       run: |
-        flask collect -n static  # If you need to collect static files
+        python export_static.py  # If you need to collect static files
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

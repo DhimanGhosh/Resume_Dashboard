@@ -1,6 +1,14 @@
 from flask import Flask, render_template, send_file
+from flask.cli import AppGroup
 
 app = Flask(__name__)
+collect_cli = AppGroup('collect', help='Collect static files')
+
+
+@collect_cli.command('static')
+def collect_static():
+    """Collect static files."""
+    print("Collecting static files...")  # Replace with actual collection logic
 
 
 @app.route('/')
@@ -88,6 +96,7 @@ def download_resume():
 
 
 if __name__ == '__main__':  # Check if this script is being run directly (not imported)
+    app.cli.add_command(collect_cli)
     app.run(
         debug=True,  # Enable debug mode for the application
         host='0.0.0.0'  # Allow the application to be accessed from any network
