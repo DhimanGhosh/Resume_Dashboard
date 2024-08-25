@@ -1,4 +1,5 @@
 from flask import Flask, render_template, send_file
+from waitress import serve
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -76,4 +77,4 @@ def download_resume():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    serve(app, host="0.0.0.0", port=5000)
