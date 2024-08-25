@@ -156,6 +156,9 @@ def main():
     # Scrape the main page
     scrape_page(base_url, output_dir)
 
+    # Stop the Flask app
+    flask_thread.join()
+
     # You can add more URLs to scrape if needed
     # Example: scrape_page(base_url + '/another_page', output_dir)
 
